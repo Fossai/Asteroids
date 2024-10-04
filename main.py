@@ -50,6 +50,12 @@ def main():
                 print("Game over!")
                 sys.exit("gmae ovr")
 
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.collision(shot):
+                    asteroid.kill()
+                    shot.kill()
+
         pygame.display.flip()
         dt = clock.tick(60) / 1000
         #dt = clock.tick() / 1000
